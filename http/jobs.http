@@ -1,0 +1,41 @@
+GET http://localhost:8080/api/jobs
+
+###
+
+POST http://localhost:8080/api/jobs
+Content-Type: application/json
+
+{
+    "title": "Software Engineer",
+    "description": "Develop software",
+    "location": "San Francisco",
+    "company": "Google",
+    "type": "FULL_TIME",
+    "level": "SENIOR",
+    "salary": 15000,
+    "skills": ["Java", "Spring"]
+}
+
+###
+
+GET http://localhost:8080/api/jobs/1
+
+###
+
+PUT http://localhost:8080/api/jobs/1
+Content-Type: application/json
+
+{
+    "title": "Software Engineer",
+    "description": "Develop software",
+    "location": "San Francisco",
+    "company": "Google",
+    "type": "FULL_TIME",
+    "level": "SENIOR",
+    "salary": 20000,
+    "skills": ["Java", "Spring", "Hibernate"]
+}
+
+###
+
+DELETE http://localhost:8080/api/jobs/1

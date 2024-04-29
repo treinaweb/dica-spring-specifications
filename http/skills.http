@@ -1,0 +1,27 @@
+GET http://localhost:8080/api/skills
+
+###
+
+POST http://localhost:8080/api/skills
+Content-Type: application/json
+
+{
+    "name": "Hibernate"
+}
+
+###
+
+GET http://localhost:8080/api/skills/1
+
+###
+
+PUT http://localhost:8080/api/skills/1
+Content-Type: application/json
+
+{
+    "name": "Java 8"
+}
+
+###
+
+DELETE http://localhost:8080/api/skills/1
