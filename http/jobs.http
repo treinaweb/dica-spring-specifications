@@ -1,4 +1,4 @@
-GET http://localhost:8080/api/jobs
+GET http://localhost:8080/api/jobs?salaryGte=15000&title=python&salaryLte=20000&skill=R
 
 ###
 

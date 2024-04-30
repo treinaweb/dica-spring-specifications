@@ -18,6 +18,7 @@ import org.springframework.web.server.ResponseStatusException;
 import br.com.treinaweb.springspecifications.api.jobs.dtos.JobRequest;
 import br.com.treinaweb.springspecifications.api.jobs.dtos.JobResponse;
 import br.com.treinaweb.springspecifications.api.jobs.mappers.JobMapper;
+import br.com.treinaweb.springspecifications.api.jobs.queryfilters.JobQueryFilter;
 import br.com.treinaweb.springspecifications.core.repositories.JobRepository;
 import lombok.RequiredArgsConstructor;
 
@@ -33,8 +34,8 @@ public class JobRestController {
     private final JobRepository jobRepository;
 
     @GetMapping
-    public List<JobResponse> findAll() {
-        return jobRepository.findAll()
+    public List<JobResponse> findAll(JobQueryFilter filter) {
+        return jobRepository.findAll(filter.toSpecification())
             .stream()
             .map(jobMapper::toJobResponse)
             .toList();
